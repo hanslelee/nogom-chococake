@@ -438,6 +438,7 @@ GameObject:
   - component: {fileID: 1275589913}
   - component: {fileID: 1275589912}
   - component: {fileID: 1275589916}
+  - component: {fileID: 1275589917}
   m_Layer: 5
   m_Name: nogom
   m_TagString: Player
@@ -462,7 +463,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: 70}
-  m_SizeDelta: {x: 120, y: 120}
+  m_SizeDelta: {x: 210, y: 210}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!50 &1275589912
 Rigidbody2D:
@@ -560,6 +561,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c14f11952003511439721e3701d6aead, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1275589917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1275589910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddf97d1e7d3aebd43b65cbfb2ec3b900, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 400
 --- !u!1 &1317119828
 GameObject:
   m_ObjectHideFlags: 0
@@ -1035,6 +1049,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1185289627}
     m_Modifications:
+    - target: {fileID: 4338365732311493621, guid: d6b434ba68abcb24b8b0f4104ef4678a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4338365732794104049, guid: d6b434ba68abcb24b8b0f4104ef4678a,
         type: 3}
       propertyPath: m_Name
@@ -1160,6 +1179,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1185289627}
     m_Modifications:
+    - target: {fileID: 4338365732311493621, guid: d6b434ba68abcb24b8b0f4104ef4678a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4338365732794104049, guid: d6b434ba68abcb24b8b0f4104ef4678a,
         type: 3}
       propertyPath: m_Name
