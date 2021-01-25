@@ -82,7 +82,7 @@ public class NogomController : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.tag == "Dead" || !isDead)
+        if(other.tag == "Dead" && !isDead)
         {
             // 충돌한 상대방의 태그가 Dead이고 아직 사망하지 않았다면 죽음.
             Die();

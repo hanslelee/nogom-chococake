@@ -11,7 +11,7 @@ public class ScrollingObject : MonoBehaviour
     void Update()
     {
         //초당 9f만큼 왼쪽으로 이동
-       // transform.Translate(Vector3.left * speed * Time.deltaTime);
+        transform.Translate(Vector3.left * speed * Time.deltaTime);
         //Vector3.left = (-1,0,0)임
     }
 }
