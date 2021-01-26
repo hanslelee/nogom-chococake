@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class nogomControllerStage2 : MonoBehaviour
 {
+    public int life = 3;
 
     void Start()
     {
@@ -11,5 +12,6 @@ public class nogomControllerStage2 : MonoBehaviour
 
     void Update()
     {
+
     }
 }
