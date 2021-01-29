@@ -88,6 +88,13 @@ public class NogomController : MonoBehaviour
             // 충돌한 상대방의 태그가 Dead이고 아직 사망하지 않았다면 죽음.
             Die();
         }
+
+        if(other.tag == "Coin")
+        {
+            other.gameObject.SetActive(false);
+            GameManager3.instance.AddScore(10);
+        }
+
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -104,6 +111,7 @@ public class NogomController : MonoBehaviour
         isGrounded = false;
     }
 
+   
 
 
 
