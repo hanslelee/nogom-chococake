@@ -15,15 +15,14 @@ public class Platform : MonoBehaviour
         stepped = false;
 
         //장애물 수만큼 루프
-        for(int i = 0; i < obstacles.Length; i++)
+        //for(int i = 0; i < obstacles.Length; i++)
         {
             //현재 순번의 장애물을 1/4의 확률로 활성화
-            if (Random.Range(0, 4) == 0)
+            int rand = Random.Range(0, 4);
+            obstacles[rand].SetActive(true);
+            for(int i = 0; i < obstacles.Length; i++)
             {
-                obstacles[i].SetActive(true);
-            }
-            else
-            {
+                if (i == rand) continue;
                 obstacles[i].SetActive(false);
             }
         }
