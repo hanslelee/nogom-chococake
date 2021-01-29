@@ -1200,7 +1200,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4875310372665356900}
   - component: {fileID: 4704543697280382150}
-  - component: {fileID: 4855240089179061776}
+  - component: {fileID: 3209600446671399146}
   m_Layer: 0
   m_Name: Obstacle Lightning
   m_TagString: Obstacle
@@ -1276,8 +1276,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &4855240089179061776
-BoxCollider2D:
+--- !u!58 &3209600446671399146
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1289,19 +1289,9 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.5}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 25.010975, y: 8.28}
-    newSize: {x: 25.010975, y: 8.28}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: -0.17, y: 0.05}
   serializedVersion: 2
-  m_Size: {x: 1.5, y: 0.5}
-  m_EdgeRadius: 0
+  m_Radius: 0.25
 --- !u!1 &4881036766526442222
 GameObject:
   m_ObjectHideFlags: 0
@@ -1312,7 +1302,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4875363956950704720}
   - component: {fileID: 4704641228435279158}
-  - component: {fileID: 4855743546061912420}
+  - component: {fileID: 8667762357065675400}
   m_Layer: 0
   m_Name: Obstacle Lightning And Cloud
   m_TagString: Obstacle
@@ -1388,8 +1378,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &4855743546061912420
-BoxCollider2D:
+--- !u!58 &8667762357065675400
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1401,19 +1391,9 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.5}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 20.48, y: 20.48}
-    newSize: {x: 20.48, y: 20.48}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: 0, y: 0.7}
   serializedVersion: 2
-  m_Size: {x: 1.5, y: 0.5}
-  m_EdgeRadius: 0
+  m_Radius: 4.5
 --- !u!1 &4881101357237431914
 GameObject:
   m_ObjectHideFlags: 0
@@ -1515,7 +1495,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.6, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1526,8 +1506,8 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 10, y: 2}
-  m_EdgeRadius: 0
+  m_Size: {x: 3, y: 1}
+  m_EdgeRadius: 0.5
 --- !u!114 &4768646032672922602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1568,7 +1548,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4879240610464922638}
   - component: {fileID: 4705001301074260762}
-  - component: {fileID: 4856229802979659710}
+  - component: {fileID: 382626751867545331}
   m_Layer: 0
   m_Name: Obstacle Cloud
   m_TagString: Obstacle
@@ -1644,8 +1624,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &4856229802979659710
-BoxCollider2D:
+--- !u!58 &382626751867545331
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1657,19 +1637,9 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.5}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 10.24, y: 10.24}
-    newSize: {x: 10.24, y: 10.24}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 0.1, y: 0.1}
-  m_EdgeRadius: 0
+  m_Radius: 4
 --- !u!1 &5086233852246278730
 GameObject:
   m_ObjectHideFlags: 0

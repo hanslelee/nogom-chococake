@@ -121,6 +121,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &33815841 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4338365732311493621, guid: d6b434ba68abcb24b8b0f4104ef4678a,
+    type: 3}
+  m_PrefabInstance: {fileID: 467530675}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &51927062
 GameObject:
   m_ObjectHideFlags: 0
@@ -849,6 +855,7 @@ GameObject:
   m_Component:
   - component: {fileID: 335148624}
   - component: {fileID: 335148625}
+  - component: {fileID: 335148626}
   m_Layer: 5
   m_Name: Life
   m_TagString: Untagged
@@ -928,6 +935,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &335148626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 335148623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5223cef088ecdd8479fe0f13d4a48a5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hearts:
+  - {fileID: 815842451}
+  - {fileID: 1842492963}
+  - {fileID: 33815841}
 --- !u!1001 &350742368
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1069,6 +1092,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: HeartOFF
+      objectReference: {fileID: 0}
+    - target: {fileID: 4338365732794104049, guid: d6b434ba68abcb24b8b0f4104ef4678a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4338365732794104062, guid: d6b434ba68abcb24b8b0f4104ef4678a,
         type: 3}
@@ -1421,6 +1449,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 9
+--- !u!1 &815842451 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4338365732311493621, guid: d6b434ba68abcb24b8b0f4104ef4678a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1335305931}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1073678358
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2242,6 +2276,12 @@ Transform:
   m_Father: {fileID: 1512678231}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1842492963 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4338365732311493621, guid: d6b434ba68abcb24b8b0f4104ef4678a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1073678358}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1856002249
 GameObject:
   m_ObjectHideFlags: 0

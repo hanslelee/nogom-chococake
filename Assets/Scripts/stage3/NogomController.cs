@@ -7,11 +7,12 @@ public class NogomController : MonoBehaviour
 {
     public float jumpForce = 700f;
     public AudioClip deathClip;
+    public static int heartCount = 3;
 
     private int jumpCount = 0; //노곰이가 두번 점프하면 0으로 리셋됨
     private bool isGrounded = false;
     private bool isDead = false; //떨어져서 데드존에 닿거나 장애물 세번 맞으면(하트 세번깎이면) 죽음
-    private int heartCount = 3;
+    
 
     private Animator animator;
     private Rigidbody2D nogomRigidbody;
@@ -88,8 +89,21 @@ public class NogomController : MonoBehaviour
             // 충돌한 상대방의 태그가 Dead이고 아직 사망하지 않았다면 죽음.
             Die();
         }
+        if (other.tag == "Obstacle")
+        {
+            heartCount--;
+            Debug.Log("Hello");
 
-        if(other.tag == "Coin")
+            GameObject.Find("Life").GetComponent<Life>().HeartOff();
+
+            if(heartCount <= 0)
+            {
+                Die();
+            }
+
+        }
+
+        if (other.tag == "Coin")
         {
             other.gameObject.SetActive(false);
             GameManager3.instance.AddScore(10);
@@ -104,6 +118,7 @@ public class NogomController : MonoBehaviour
             isGrounded = true;
             jumpCount = 0;
         }
+        
     }
     private void OnCollisionExit2D(Collision2D collision)
     {

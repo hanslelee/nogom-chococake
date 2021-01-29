@@ -39,6 +39,7 @@ public class GameManager3 : MonoBehaviour
         if(isGameover && Input.GetMouseButtonDown(0))
         {
             //게임오버 상태이고 마우스 왼쪽버튼 누르면 현재 액티브한 씬 이름 가져와서 다시 로드(시작)
+            NogomController.heartCount = 3;
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
         
