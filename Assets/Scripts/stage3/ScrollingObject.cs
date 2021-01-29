@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ScrollingObject : MonoBehaviour
 {
-    public float speed = 5f;
+    public float speed = 9f;
 
 
     // Update is called once per frame

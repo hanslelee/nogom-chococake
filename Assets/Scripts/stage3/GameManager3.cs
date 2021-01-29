@@ -13,7 +13,6 @@ public class GameManager3 : MonoBehaviour
     public GameObject gameoverUI;//게임오버시 활성화할 UI 게임 프로젝트
 
     private int score = 0;
-    private int heartCount = 3;
 
     void Awake()
     {
