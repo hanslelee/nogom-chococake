@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlatformSpawner : MonoBehaviour
 {
     public GameObject platformPrefab;
-    public int count = 3;
+    public int count = 4;
 
     public float timeBetSpawnMin = 0.5f; // 다음 배치까지 시간 간격 최솟값
     public float timeBetSpawnMax = 1.5f; // 다음 배치까지 시간 간격 최댓값
@@ -13,7 +13,9 @@ public class PlatformSpawner : MonoBehaviour
 
     public float yMin = -3.5f; // 배치할 위치의 최소 y값
     public float yMax = 1.5f; // 배치할 위치의 최대 y값
-    private float xPos = 10f; // 배치할 위치의 x값
+    public float xPos = 10f; // 배치할 위치의 x값
+    public float xMax = 10f; // 배치할 위치의 x값
+    public float xMin = 8f; // 배치할 위치의 x값
 
     private bool isfirst = true;
 
@@ -63,6 +65,7 @@ public class PlatformSpawner : MonoBehaviour
             lastSpawnTime = Time.time;
 
             timeBetSpawn = Random.Range(timeBetSpawnMin, timeBetSpawnMax);
+           // float xPos = Random.Range(xMin, xMax);
 
             float yPos = Random.Range(yMin, yMax);
 
