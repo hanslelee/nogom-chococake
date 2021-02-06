@@ -5,7 +5,8 @@ using UnityEngine;
 //NogomController는 플레이어 캐릭터로서 Nogom 게임 오브젝트를 제어한다.
 public class NogomController : MonoBehaviour
 {
-    public float jumpForce = 300f;
+    public float jumpForce = 1000f;
+    
     public AudioClip deathClip;
     public static int heartCount = 3;
 
@@ -54,7 +55,7 @@ public class NogomController : MonoBehaviour
         else if (Input.GetMouseButtonUp(0) && nogomRigidbody.velocity.y > 0)
         {//마우스 왼쪽 버튼에서 손을 떼는 순간 노곰이가 위로 올라가고 있다면
          // 현재 속도를 절반으로 변경
-            //nogomRigidbody.velocity *= 0.8f;
+            nogomRigidbody.velocity *= 0.5f;
 
         }
 
@@ -92,7 +93,7 @@ public class NogomController : MonoBehaviour
         if (other.tag == "Obstacle")
         {
             heartCount--;
-            GameObject.Find("Life").GetComponent<Life>().HeartOff();
+            if(heartCount>=0) GameObject.Find("Life").GetComponent<Life>().HeartOff();
 
             if(heartCount <= 0)
             {

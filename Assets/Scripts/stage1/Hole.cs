@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//using UnityEngine.UI;
 
 public enum MoleState
 {
@@ -27,25 +28,41 @@ public class Hole : MonoBehaviour
         Open_On();
     }
 
+    //public bool _mouseState;
+    //public GameObject target;
+    //public Vector3 MousePos;
+
     // Update is called once per frame
     void Update()
     {
-        if(Ms == MoleState.Open)
-        {
-            Open_ing();
+        switch (Ms) {
+            case MoleState.Open:
+                Open_ing();
+                break;
+            case MoleState.Idle:
+                Idle_ing();
+                break;
+            case MoleState.Close:
+                Close_ing();
+                break;
+            case MoleState.Catch:
+                Catch_ing();
+                break;
         }
-        if(Ms == MoleState.Idle)
+
+        if(Input.GetMouseButtonUp(0))
         {
-            Idle_ing();
+            if (Ms == MoleState.Idle || Ms == MoleState.Open)
+            {
+                Catch_On();
+            }
         }
-        if (Ms == MoleState.Close)
-        {
-            Close_ing();
-        }
-        if (Ms == MoleState.Catch)
-        {
-            Catch_ing();
-        }
+    }
+
+    public void OnMouseDown()
+    {
+        if ((Ms == MoleState.Idle) || (Ms == MoleState.Open))
+            Catch_On();
     }
 
     public void Open_On()
@@ -129,11 +146,8 @@ public class Hole : MonoBehaviour
         Open_On();
     }
 
-    public void OnMouseDown()
+    void start()
     {
-        if(Ms == MoleState.Idle || Ms == MoleState.Open)
-        {
-            Catch_On();
-        }
+        Open_On();
     }
 }

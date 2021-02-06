@@ -12,6 +12,12 @@ public class nogomControllerStage2 : MonoBehaviour
 
     void Update()
     {
+        if (life <= 0)
+            Die();
+    }
 
+    public void Die()
+    {
+        gameObject.SetActive(false);
     }
 }

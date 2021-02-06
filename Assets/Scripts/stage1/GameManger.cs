@@ -11,8 +11,28 @@ public enum GameState
 
 public class GameManager : MonoBehaviour
 {
-    public GameState GS;
-    public Hole[] hole;
+    public static GameManager manager;
+    public int score;
 
-    public GameObject ReadyGut;
+    void Awake()
+    {
+        if (manager != null)
+            Debug.Log("Game manager Warning: Mutiple instance is running");
+        manager = this;
+    }
+
+    public void AddScore(int value)
+    {
+        score += value;
+    }
+
+    public void SetGameOver()
+    {
+        //게임 오버시 처리 코드
+    }
+
+    public void SetReplay()
+    {
+        //게임 재시작시 처리코드
+    }
 }

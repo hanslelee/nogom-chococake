@@ -13,7 +13,9 @@ public class PlatformSpawner : MonoBehaviour
 
     public float yMin = -3.5f; // 배치할 위치의 최소 y값
     public float yMax = 1.5f; // 배치할 위치의 최대 y값
-    private float xPos = 8f; // 배치할 위치의 x값
+    private float xPos = 10f; // 배치할 위치의 x값
+
+    private bool isfirst = true;
 
     private GameObject[] platforms; // 미리 생성한 발판들
     private int currentIndex = 0; // 사용할 현재 순번의 발판
@@ -69,7 +71,12 @@ public class PlatformSpawner : MonoBehaviour
             platforms[currentIndex].SetActive(true);
 
             //현재 순번의 발판을 화면 오른쪽에 재배치
-            platforms[currentIndex].transform.position = new Vector2(xPos, yPos);
+            if (isfirst)
+            {
+                platforms[currentIndex].transform.position = new Vector2(10, yPos);
+                isfirst = false;
+            }
+            else { platforms[currentIndex].transform.position = new Vector2(xPos, yPos); }
 
             //순번 넘기기
             currentIndex++;

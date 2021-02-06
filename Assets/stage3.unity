@@ -427,7 +427,7 @@ SpriteRenderer:
   m_SortingLayerID: -954175659
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e978023895fb1c748b9354804dad2d6f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7b85a19dc8588c9478eb8c3708b76f90, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -464,7 +464,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a77bae598589964e9c997aa3d26de46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 9
+  speed: 6
 --- !u!1 &164897147
 GameObject:
   m_ObjectHideFlags: 0
@@ -634,8 +634,8 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!58 &327067798
-CircleCollider2D:
+--- !u!70 &327067798
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -647,9 +647,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.57}
-  serializedVersion: 2
-  m_Radius: 5.24
+  m_Offset: {x: 0, y: 2}
+  m_Size: {x: 6, y: 16}
+  m_Direction: 0
 --- !u!50 &327067799
 Rigidbody2D:
   serializedVersion: 4
@@ -662,10 +662,10 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1.2
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 4.5
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -747,7 +747,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18b38fd11c616944eb93c0b01ab3804d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 300
+  jumpForce: 1100
   deathClip: {fileID: 8300000, guid: 9a6f9fb5b3144104293e057fd78d533b, type: 3}
 --- !u!82 &327067803
 AudioSource:
@@ -2141,10 +2141,10 @@ MonoBehaviour:
   platformPrefab: {fileID: 4881101357237431914, guid: 0d9aff1d37c0db341803a2e05c309d4b,
     type: 3}
   count: 3
-  timeBetSpawnMin: 1.25
-  timeBetSpawnMax: 2.25
+  timeBetSpawnMin: 2.5
+  timeBetSpawnMax: 3
   yMin: -3.5
-  yMax: 1.5
+  yMax: 1
 --- !u!4 &1420684577
 Transform:
   m_ObjectHideFlags: 0
