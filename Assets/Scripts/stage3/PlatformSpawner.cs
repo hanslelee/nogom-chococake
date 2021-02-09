@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿// 노곰런
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,7 +10,7 @@ public class PlatformSpawner : MonoBehaviour
 
     public float timeBetSpawnMin = 0.5f; // 다음 배치까지 시간 간격 최솟값
     public float timeBetSpawnMax = 1.5f; // 다음 배치까지 시간 간격 최댓값
-    private float timeBetSpawn; // 다음 배치까지 시간 간격
+    public static float timeBetSpawn; // 다음 배치까지 시간 간격
 
     public float yMin = -3.5f; // 배치할 위치의 최소 y값
     public float yMax = 1.5f; // 배치할 위치의 최대 y값
@@ -17,14 +18,14 @@ public class PlatformSpawner : MonoBehaviour
     public float xMax = 10f; // 배치할 위치의 x값
     public float xMin = 8f; // 배치할 위치의 x값
 
-    private bool isfirst = true;
+    public static bool isfirst = true;
 
     private GameObject[] platforms; // 미리 생성한 발판들
     private int currentIndex = 0; // 사용할 현재 순번의 발판
 
     //초반에 생성한 발판을 화면 밖에 숨겨둘 위치
     private Vector2 poolPosition = new Vector2(0, -25);
-    private float lastSpawnTime; // 마지막 배치 시점
+    public static float lastSpawnTime; // 마지막 배치 시점
 
     
     // Start is called before the first frame update
@@ -76,10 +77,13 @@ public class PlatformSpawner : MonoBehaviour
             //현재 순번의 발판을 화면 오른쪽에 재배치
             if (isfirst)
             {
-                platforms[currentIndex].transform.position = new Vector2(10, yPos);
-                isfirst = false;
+               platforms[currentIndex].transform.position = new Vector2(10, yPos);
+               isfirst = false;
+               lastSpawnTime = Time.time+1.2f; timeBetSpawn = 0f;
             }
-            else { platforms[currentIndex].transform.position = new Vector2(xPos, yPos); }
+            else {
+                platforms[currentIndex].transform.position = new Vector2(xPos, yPos);
+            }
 
             //순번 넘기기
             currentIndex++;
