@@ -6,6 +6,8 @@ using UnityEngine;
 public class NogomController : MonoBehaviour
 {
     public float jumpForce = 1000f;
+
+    public GameObject redScreen;
     
     public AudioClip deathClip;
     public static int heartCount = 3;
@@ -14,8 +16,10 @@ public class NogomController : MonoBehaviour
     private bool isGrounded = false;
     private bool isDead = false; //떨어져서 데드존에 닿거나 장애물 세번 맞으면(하트 세번깎이면) 죽음
     private bool isHurt = false;
+    private bool redScreenOn = false;
 
     private float hurtStart;
+    private float lastActiveTime;
 
     private Animator animator;
     private Rigidbody2D nogomRigidbody;
@@ -62,7 +66,27 @@ public class NogomController : MonoBehaviour
         }
 
         animator.SetBool("Grounded", isGrounded);
-        
+        if (redScreenOn)
+        {
+            redScreen.SetActive(true);
+            if (Time.time >= lastActiveTime + 0.15f)
+            {
+                redScreen.SetActive(false);
+                if(Time.time >= lastActiveTime + 0.25f)
+                {
+                    redScreen.SetActive(true);
+
+                    if (Time.time >= lastActiveTime + 0.4f)
+                    {
+                        redScreen.SetActive(false);
+                        redScreenOn = false;
+                    }
+
+                }
+
+                
+            }
+        }
         if (isHurt == true && (Time.time >= hurtStart+0.5f))
         {
             isHurt = false;
@@ -101,6 +125,11 @@ public class NogomController : MonoBehaviour
         {
             isHurt = true;
             hurtStart = Time.time;
+
+            redScreenOn = true;
+            lastActiveTime = Time.time;
+
+            
             heartCount--;
             if(heartCount>=0) GameObject.Find("Life").GetComponent<Life>().HeartOff();
 
