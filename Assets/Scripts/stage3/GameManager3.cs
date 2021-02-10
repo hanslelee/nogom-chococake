@@ -11,6 +11,7 @@ public class GameManager3 : MonoBehaviour
     public bool isSuccess = false;
     public Text scoreText; // 점수 출력할 UI텍스트
     public GameObject gameoverUI;//게임오버시 활성화할 UI 게임 프로젝트
+    public GameObject successUI;
 
     private int score = 0;
 
@@ -39,6 +40,7 @@ public class GameManager3 : MonoBehaviour
         {
             //게임오버 상태이고 마우스 왼쪽버튼 누르면 현재 액티브한 씬 이름 가져와서 다시 로드(시작)
             NogomController.heartCount = 3;
+            NogomController.currentScore = 0;
             PlatformSpawner.isfirst = true;
             PlatformSpawner.lastSpawnTime = 0f;
             PlatformSpawner.timeBetSpawn = 0f;
@@ -65,5 +67,11 @@ public class GameManager3 : MonoBehaviour
     {
         isGameover = true;
         gameoverUI.SetActive(true);
+    }
+
+    public void OnPlayerSuccess()
+    {
+        isSuccess = true;
+        successUI.SetActive(true);
     }
 }

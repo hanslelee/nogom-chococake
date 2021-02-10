@@ -11,6 +11,7 @@ public class NogomController : MonoBehaviour
     
     public AudioClip deathClip;
     public static int heartCount = 3;
+    public static int currentScore=0;
 
     private int jumpCount = 0; //노곰이가 두번 점프하면 0으로 리셋됨
     private bool isGrounded = false;
@@ -93,6 +94,16 @@ public class NogomController : MonoBehaviour
         }
         animator.SetBool("Hurt", isHurt);
 
+        if (currentScore >= 300)
+        {
+            Die();
+
+            //게임 매니저의 게임 성공 처리 실행
+            GameManager3.instance.OnPlayerSuccess();
+
+        }
+
+
     }
     private void Die() //사망 애니메이션 재생하고 노곰이의 현재 상태를 사망상태로 변경
     {
@@ -145,6 +156,7 @@ public class NogomController : MonoBehaviour
         {
             other.gameObject.SetActive(false);
             GameManager3.instance.AddScore(10);
+            currentScore += 10;
         }
 
     }
