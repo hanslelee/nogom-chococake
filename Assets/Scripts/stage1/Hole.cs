@@ -50,13 +50,13 @@ public class Hole : MonoBehaviour
                 break;
         }
 
-        if(Input.GetMouseButtonUp(0))
+        /*if(Input.GetMouseButtonUp(0))
         {
             if (Ms == MoleState.Idle || Ms == MoleState.Open)
             {
                 Catch_On();
             }
-        }
+        }*/
     }
 
     public void OnMouseDown()

@@ -9,10 +9,13 @@ public class Bomb : FallingObject
         nogomController.life--;
 
         if (nogomController.life == 2)
-            GameObject.Find("HeartON (2)").SetActive(false);
+            GameObject.Find("HeartON").SetActive(false);
         else if (nogomController.life == 1)
             GameObject.Find("HeartON (1)").SetActive(false);
         else if (nogomController.life == 0)
-            GameObject.Find("HeartON").SetActive(false);
+        {
+            GameObject.Find("HeartON (2)").SetActive(false);
+            nogomController.Die();
+        }
     }
 }

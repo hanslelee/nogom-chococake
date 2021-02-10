@@ -13,14 +13,22 @@ public class Platform : MonoBehaviour
     {
         //현재 순번의 장애물을 1/4의 확률로 활성화
         int rand = Random.Range(0, 4);
-        obstacles[rand].SetActive(false);
-        obstacles[rand].SetActive(true);
+        
+        
         for(int i = 0; i < obstacles.Length; i++)
         {
             if (i == rand) continue;
             obstacles[i].SetActive(false);
         }
-      
+        
+        obstacles[rand].SetActive(false);
+        obstacles[rand].SetActive(true);
+
+        Transform[] trCoins = obstacles[rand].GetComponentsInChildren<Transform>(true);
+        for(int i=0;i< trCoins.Length; i++)
+        {
+            trCoins[i].gameObject.SetActive(true);
+        }
     }
     
 
