@@ -11,8 +11,12 @@ public class GameManager2 : MonoBehaviour
     public bool isGameover = false;         // 게임 오버 상태
     public GameObject gameoverUI;           // 게임 오버시 활성화할 UI
 
+    public bool isSuccess = false;          // 게임 성공 상태
+    public GameObject succssUI;             // 게임 성공 시 활성화할 UI
+
     public int n_needle = 0, n_thread = 0, n_fabric = 0;    // 바늘, 실, 천 개수 
-    
+    public int goal_n = 30, goal_t = 20, goal_f = 10;    // 바늘, 실, 천 개수 
+
     void Awake()
     {
         if (instance == null)
@@ -29,6 +33,12 @@ public class GameManager2 : MonoBehaviour
         isGameover = true;
         gameoverUI.SetActive(true);
     }
+
+    public void OnGameSuccess()
+    {
+        isSuccess = true;
+        succssUI.SetActive(true);
+    }
     
     void Start()
     {
@@ -41,5 +51,11 @@ public class GameManager2 : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
+
+        if (n_needle >= goal_n && n_thread >= goal_t && n_fabric >= goal_f)
+            OnGameSuccess();
+
+        if(isSuccess)
+        { }
     }
 }

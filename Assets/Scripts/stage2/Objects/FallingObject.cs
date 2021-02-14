@@ -6,8 +6,6 @@ public class FallingObject : MonoBehaviour
 {
     void Start()
     {
-        // 3초 뒤 자신의 게임 오브젝트 파괴
-        Destroy(gameObject, 3f);
     }
 
     // 충돌 시 호출

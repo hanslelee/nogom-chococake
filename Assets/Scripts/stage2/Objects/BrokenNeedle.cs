@@ -11,7 +11,7 @@ public class BrokenNeedle : FallingObject
         if (gameManager2.n_needle > 0)
         {
             gameManager2.n_needle--;
-            GameObject.Find("NeedleMarkerText").GetComponent<Text>().text = gameManager2.n_needle + "/30";
+            GameObject.Find("NeedleMarkerText").GetComponent<Text>().text = gameManager2.n_needle + "/" + gameManager2.goal_n;
         }
     }
 }

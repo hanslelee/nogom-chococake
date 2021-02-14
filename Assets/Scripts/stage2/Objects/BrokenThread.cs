@@ -11,7 +11,7 @@ public class BrokenThread : FallingObject
         if (gameManager2.n_thread > 0)
         {
             gameManager2.n_thread--;
-            GameObject.Find("ThreadMarkerText").GetComponent<Text>().text = gameManager2.n_thread + "/20";
+            GameObject.Find("ThreadMarkerText").GetComponent<Text>().text = gameManager2.n_thread + "/" + gameManager2.goal_t;
         }
     }
 }

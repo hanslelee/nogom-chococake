@@ -8,7 +8,7 @@ public class nogomControllerStage2 : MonoBehaviour
     public int life = 3;                    // 목숨 개수
 
     private Rigidbody2D nogomRigidbody;     // 이동에 사용할 노곰 리지드 바디
-    public float speed = 6f;                // 이동 속력
+    public float speed = 8f;                // 이동 속력
 
     Vector2 inputPosition;                  // 터치 부분의 위치를 받을 변수
     Camera MainCamera;                      // Main Camera를 할당받을 변수

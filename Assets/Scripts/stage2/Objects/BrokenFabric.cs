@@ -11,7 +11,7 @@ public class BrokenFabric : FallingObject
         if (gameManager2.n_fabric > 0)
         {
             gameManager2.n_fabric--;
-            GameObject.Find("FabricMarkerText").GetComponent<Text>().text = gameManager2.n_fabric + "/10";
+            GameObject.Find("FabricMarkerText").GetComponent<Text>().text = gameManager2.n_fabric + "/" + gameManager2.goal_f;
         }
     }
 }
