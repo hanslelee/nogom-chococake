@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 //NogomController는 플레이어 캐릭터로서 Nogom 게임 오브젝트를 제어한다.
 public class NogomController : MonoBehaviour
@@ -8,6 +9,7 @@ public class NogomController : MonoBehaviour
     public float jumpForce = 1000f;
 
     public GameObject redScreen;
+    public GameObject background;
     
     public AudioClip deathClip;
     public static int heartCount = 3;
@@ -47,22 +49,25 @@ public class NogomController : MonoBehaviour
         }
         
         
-        if(Input.GetMouseButtonDown(0) && jumpCount < 2)
+        if(Input.GetMouseButtonDown(0) && jumpCount < 2 )
         {//마우스 왼쪽 버튼 누를때
+            if (EventSystem.current && EventSystem.current.IsPointerOverGameObject() == false)
+            {
+                jumpCount++;
 
-            jumpCount++;
+                // 직전 속도에 영향을 받지 않도록 순간적으로 속도 (0,0)으로 만들고 위로 jumpForce만큼 힘주기
+                nogomRigidbody.velocity = Vector2.zero;
+                nogomRigidbody.AddForce(new Vector2(0, jumpForce));
 
-            // 직전 속도에 영향을 받지 않도록 순간적으로 속도 (0,0)으로 만들고 위로 jumpForce만큼 힘주기
-            nogomRigidbody.velocity = Vector2.zero;
-            nogomRigidbody.AddForce(new Vector2(0, jumpForce));
-
-            // 소리 재생
-            nogomAudio.Play();
+                // 소리 재생
+                nogomAudio.Play();
+            }
         }
         else if (Input.GetMouseButtonUp(0) && nogomRigidbody.velocity.y > 0)
         {//마우스 왼쪽 버튼에서 손을 떼는 순간 노곰이가 위로 올라가고 있다면
          // 현재 속도를 절반으로 변경
-            nogomRigidbody.velocity *= 0.5f;
+            if (EventSystem.current && EventSystem.current.IsPointerOverGameObject() == false)
+                nogomRigidbody.velocity *= 0.5f;
 
         }
 
