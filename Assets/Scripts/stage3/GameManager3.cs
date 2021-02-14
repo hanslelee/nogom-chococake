@@ -9,9 +9,13 @@ public class GameManager3 : MonoBehaviour
     public static GameManager3 instance; //싱글턴을 할당할 전역변수
     public bool isGameover = false; // 게임오버상태
     public bool isSuccess = false;
+    public bool next = false;
     public Text scoreText; // 점수 출력할 UI텍스트
     public GameObject gameoverUI;//게임오버시 활성화할 UI 게임 프로젝트
     public GameObject successUI;
+    public GameObject canvas;
+    public GameObject richNogomImage;
+    
 
     private int score = 0;
 
@@ -47,6 +51,16 @@ public class GameManager3 : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
    
         }
+        if (isSuccess && Input.GetMouseButtonDown(0))
+        {
+            canvas.SetActive(false);
+            richNogomImage.SetActive(true);
+
+            if (Input.GetMouseButtonDown(0))
+                richNogom();
+            
+
+        }
         
         //목표 코인 달성했을때 다음으로 넘어감
     }
@@ -73,5 +87,9 @@ public class GameManager3 : MonoBehaviour
     {
         isSuccess = true;
         successUI.SetActive(true);
+    }
+    public void richNogom()
+    {
+        SceneManager.LoadScene("END");
     }
 }

@@ -34,7 +34,6 @@ public class GameStart : MonoBehaviour
     {
         if (!gameStarted && Input.GetMouseButtonDown(0))
             {
-                // gameStartButtonUI.SetActive(false);
                 startGame();
                 gameStarted=true;
             }

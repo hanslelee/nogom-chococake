@@ -7,7 +7,7 @@ public class BackToMainButton : MonoBehaviour
 {
     public void OnClick_GoToMain()
     {
-        SceneManager.LoadScene("Main");
+        SceneManager.LoadScene("LOBBY");
     }
 
     void Update()

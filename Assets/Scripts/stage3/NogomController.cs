@@ -99,9 +99,9 @@ public class NogomController : MonoBehaviour
         }
         animator.SetBool("Hurt", isHurt);
 
-        if (currentScore >= 300)
+        if (currentScore >= 100)
         {
-            Die();
+            Time.timeScale = 0;
 
             //게임 매니저의 게임 성공 처리 실행
             GameManager3.instance.OnPlayerSuccess();
