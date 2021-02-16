@@ -54,14 +54,14 @@ public class GameManager3 : MonoBehaviour
         if (isSuccess && Input.GetMouseButtonDown(0))
         {
             canvas.SetActive(false);
+            next = true;
+
             richNogomImage.SetActive(true);
 
-            if (Input.GetMouseButtonDown(0))
-                richNogom();
             
-
         }
-        
+        if (next && Input.GetMouseButtonDown(0))
+                richNogom();
         //목표 코인 달성했을때 다음으로 넘어감
     }
 

@@ -23,31 +23,39 @@ public class Hole : MonoBehaviour
 
     int Ani_Count; //몇 장의 애니메이션을 쓰는지
 
+    public Game_manager GM;
+
     void Start()
     {
-        Open_On();
+        GM.G0();
+        if (GM.Gs == GameState.Play)
+        {
+            Open_On();
+        }
     }
 
-    //public bool _mouseState;
-    //public GameObject target;
-    //public Vector3 MousePos;
 
     // Update is called once per frame
     void Update()
     {
-        switch (Ms) {
-            case MoleState.Open:
-                Open_ing();
-                break;
-            case MoleState.Idle:
-                Idle_ing();
-                break;
-            case MoleState.Close:
-                Close_ing();
-                break;
-            case MoleState.Catch:
-                Catch_ing();
-                break;
+        if (GM.Gs == GameState.Play)
+        {
+
+            switch (Ms)
+            {
+                case MoleState.Open:
+                    Open_ing();
+                    break;
+                case MoleState.Idle:
+                    Idle_ing();
+                    break;
+                case MoleState.Close:
+                    Close_ing();
+                    break;
+                case MoleState.Catch:
+                    Catch_ing();
+                    break;
+            }
         }
 
         /*if(Input.GetMouseButtonUp(0))
