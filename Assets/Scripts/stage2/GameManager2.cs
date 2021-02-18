@@ -12,7 +12,9 @@ public class GameManager2 : MonoBehaviour
     public GameObject gameoverUI;           // 게임 오버시 활성화할 UI
 
     public bool isSuccess = false;          // 게임 성공 상태
-    public GameObject succssUI;             // 게임 성공 시 활성화할 UI
+    public GameObject succssImage;             // 게임 성공 시 활성화할 UI
+    public GameObject canvas;
+    public GameObject toTheLobbySceneButton;
 
     public int n_needle = 0, n_thread = 0, n_fabric = 0;    // 바늘, 실, 천 개수 
     public int goal_n = 30, goal_t = 20, goal_f = 10;    // 바늘, 실, 천 개수 
@@ -37,9 +39,16 @@ public class GameManager2 : MonoBehaviour
     public void OnGameSuccess()
     {
         isSuccess = true;
-        succssUI.SetActive(true);
+        
+        canvas.SetActive(false);
+        succssImage.SetActive(true);
+        toTheLobbySceneButton.SetActive(true);
     }
-    
+    public void toTheLobbyScene()
+    {
+        SceneManager.LoadScene("LOBBY");
+    }
+
     void Start()
     {
         
@@ -49,6 +58,7 @@ public class GameManager2 : MonoBehaviour
     {
         if(isGameover && Input.GetMouseButtonDown(0))
         {
+           
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 

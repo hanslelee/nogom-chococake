@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum GameState
 {
@@ -16,8 +17,10 @@ public class Game_manager : MonoBehaviour
     //public bool isGameover = false; 
     //public bool isSuccess = false;
     public GameObject gameoverUI;
-    public GameObject successUI;
+    public GameObject successImage;
+    public GameObject toTheLobbyButton;
     public GameObject cleanNogomImage;
+    public GameObject canvas;
 
     public dda_gauge dg;
 
@@ -50,6 +53,13 @@ public class Game_manager : MonoBehaviour
     public void Success()
     {
         Gs = GameState.End;
-        successUI.SetActive(true);
+        canvas.SetActive(false);
+        successImage.SetActive(true);
+        toTheLobbyButton.SetActive(true);
+    }
+
+    public void toTheLobbyScene()
+    {
+        SceneManager.LoadScene("LOBBY");
     }
 }

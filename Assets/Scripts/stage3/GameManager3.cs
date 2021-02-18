@@ -12,7 +12,7 @@ public class GameManager3 : MonoBehaviour
     public bool next = false;
     public Text scoreText; // 점수 출력할 UI텍스트
     public GameObject gameoverUI;//게임오버시 활성화할 UI 게임 프로젝트
-    public GameObject successUI;
+    public GameObject toTheEndSceneButton;
     public GameObject canvas;
     public GameObject richNogomImage;
     
@@ -51,17 +51,8 @@ public class GameManager3 : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
    
         }
-        if (isSuccess && Input.GetMouseButtonDown(0))
-        {
-            canvas.SetActive(false);
-            next = true;
-
-            richNogomImage.SetActive(true);
-
-            
-        }
-        if (next && Input.GetMouseButtonDown(0))
-                richNogom();
+        
+        
         //목표 코인 달성했을때 다음으로 넘어감
     }
 
@@ -86,9 +77,11 @@ public class GameManager3 : MonoBehaviour
     public void OnPlayerSuccess()
     {
         isSuccess = true;
-        successUI.SetActive(true);
+        canvas.SetActive(false);
+        richNogomImage.SetActive(true);
+        toTheEndSceneButton.SetActive(true);
     }
-    public void richNogom()
+    public void toTheEndScene()
     {
         SceneManager.LoadScene("END");
     }

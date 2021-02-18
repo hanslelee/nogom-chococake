@@ -99,6 +99,7 @@ public class NogomController : MonoBehaviour
         }
         animator.SetBool("Hurt", isHurt);
 
+        /*
         if (currentScore >= 100)
         {
             Time.timeScale = 0;
@@ -107,7 +108,7 @@ public class NogomController : MonoBehaviour
             GameManager3.instance.OnPlayerSuccess();
 
         }
-
+        */
 
     }
     private void Die() //사망 애니메이션 재생하고 노곰이의 현재 상태를 사망상태로 변경
@@ -127,8 +128,19 @@ public class NogomController : MonoBehaviour
         //사망 상태를 true로 변경
         isDead = true;
 
-        //게임 매니저의 게임오버 처리 실행
-        GameManager3.instance.OnPlayerDead();
+        if (currentScore >= 100)
+        {
+            Time.timeScale = 0;
+
+            //게임 매니저의 게임 성공 처리 실행
+            GameManager3.instance.OnPlayerSuccess();
+
+        }
+        else
+        {
+            //게임 매니저의 게임오버 처리 실행
+            GameManager3.instance.OnPlayerDead();
+        }
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
