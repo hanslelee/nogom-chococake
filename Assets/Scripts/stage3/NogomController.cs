@@ -10,7 +10,8 @@ public class NogomController : MonoBehaviour
 
     public GameObject redScreen;
     public GameObject background;
-    
+    public GameObject successText;
+
     public AudioClip deathClip;
     public static int heartCount = 3;
     public static int currentScore=0;
@@ -109,6 +110,10 @@ public class NogomController : MonoBehaviour
 
         }
         */
+        if(currentScore >= 100)
+        {
+            successText.SetActive(true);
+        }
 
     }
     private void Die() //사망 애니메이션 재생하고 노곰이의 현재 상태를 사망상태로 변경

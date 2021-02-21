@@ -789,6 +789,7 @@ MonoBehaviour:
   jumpForce: 1050
   redScreen: {fileID: 1656847459}
   background: {fileID: 0}
+  successText: {fileID: 374711734}
   deathClip: {fileID: 8300000, guid: 9a6f9fb5b3144104293e057fd78d533b, type: 3}
 --- !u!82 &327067803
 AudioSource:
@@ -1314,7 +1315,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &374711735
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1331,7 +1332,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 165.8, y: -50.300003}
+  m_AnchoredPosition: {x: 167, y: -49.3}
   m_SizeDelta: {x: 300, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &374711736
