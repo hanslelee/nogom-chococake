@@ -43,6 +43,8 @@ public class GameManager2 : MonoBehaviour
         canvas.SetActive(false);
         succssImage.SetActive(true);
         toTheLobbySceneButton.SetActive(true);
+        PlayerPrefs.SetInt("stage2Clear", 1);
+        
     }
     public void toTheLobbyScene()
     {

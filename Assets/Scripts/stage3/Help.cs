@@ -15,15 +15,24 @@ public class Help : MonoBehaviour
         {
             helpUI.SetActive(false);
             Time.timeScale = 1;
+            isHelpUIOn = false;
         }
     }
    
     public void help()
     {
-        helpUI.SetActive(true);
-        Time.timeScale = 0;
-        isHelpUIOn = true;
-
+        if (helpUI.activeSelf)
+        {
+            helpUI.SetActive(false);
+            Time.timeScale = 1;
+            isHelpUIOn = false;
+        }
+        else
+        {
+            helpUI.SetActive(true);
+            Time.timeScale = 0;
+            isHelpUIOn = true;
+        }
         
     }
 }

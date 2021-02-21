@@ -56,6 +56,7 @@ public class Game_manager : MonoBehaviour
         canvas.SetActive(false);
         successImage.SetActive(true);
         toTheLobbyButton.SetActive(true);
+        PlayerPrefs.SetInt("stage1Clear", 1);
     }
 
     public void toTheLobbyScene()
