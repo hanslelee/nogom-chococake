@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 //using UnityEngine.UI;
 
 public enum MoleState
@@ -69,6 +70,7 @@ public class Hole : MonoBehaviour
 
     public void OnMouseDown()
     {
+        //if(EventSystem.current.IsPointerOverGameObject() == false)
         if ((Ms == MoleState.Idle) || (Ms == MoleState.Open))
             Catch_On();
     }

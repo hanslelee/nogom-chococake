@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class GameManager3 : MonoBehaviour
 {
@@ -42,14 +43,16 @@ public class GameManager3 : MonoBehaviour
         //게임 오버 상태에서 게임을 재시작할 수 있게 하는 처리  
         if(isGameover && Input.GetMouseButtonDown(0))
         {
-            //게임오버 상태이고 마우스 왼쪽버튼 누르면 현재 액티브한 씬 이름 가져와서 다시 로드(시작)
-            NogomController.heartCount = 3;
-            NogomController.currentScore = 0;
-            PlatformSpawner.isfirst = true;
-            PlatformSpawner.lastSpawnTime = 0f;
-            PlatformSpawner.timeBetSpawn = 0f;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-   
+            if (EventSystem.current && EventSystem.current.IsPointerOverGameObject() == false)
+            {
+                //게임오버 상태이고 마우스 왼쪽버튼 누르면 현재 액티브한 씬 이름 가져와서 다시 로드(시작)
+                NogomController.heartCount = 3;
+                NogomController.currentScore = 0;
+                PlatformSpawner.isfirst = true;
+                PlatformSpawner.lastSpawnTime = 0f;
+                PlatformSpawner.timeBetSpawn = 0f;
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
         }
         
         
@@ -84,5 +87,6 @@ public class GameManager3 : MonoBehaviour
     public void toTheEndScene()
     {
         SceneManager.LoadScene("END");
+        Time.timeScale = 1;
     }
 }

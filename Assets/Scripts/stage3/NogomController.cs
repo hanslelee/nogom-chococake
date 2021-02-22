@@ -13,6 +13,8 @@ public class NogomController : MonoBehaviour
     public GameObject successText;
 
     public AudioClip deathClip;
+    public AudioClip jumpClip;
+    public AudioClip eatingCoin;
     public static int heartCount = 3;
     public static int currentScore=0;
 
@@ -52,7 +54,7 @@ public class NogomController : MonoBehaviour
         
         if(Input.GetMouseButtonDown(0) && jumpCount < 2 )
         {//마우스 왼쪽 버튼 누를때
-            if (EventSystem.current && EventSystem.current.IsPointerOverGameObject() == false)
+           if (EventSystem.current && EventSystem.current.IsPointerOverGameObject() == false)
             {
                 jumpCount++;
 
@@ -61,6 +63,8 @@ public class NogomController : MonoBehaviour
                 nogomRigidbody.AddForce(new Vector2(0, jumpForce));
 
                 // 소리 재생
+                nogomAudio.clip = jumpClip;
+                
                 nogomAudio.Play();
             }
         }
@@ -179,6 +183,11 @@ public class NogomController : MonoBehaviour
             other.gameObject.SetActive(false);
             GameManager3.instance.AddScore(10);
             currentScore += 10;
+            //오디오 클립을 코인먹는 걸로 변경
+            nogomAudio.clip = eatingCoin;
+
+            // 코인 효과음
+            nogomAudio.Play();
         }
 
     }

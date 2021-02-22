@@ -12,8 +12,14 @@ EditorBuildSettings:
     path: Assets/LOBBY.unity
     guid: e94fc1f91cfb372449dbc6a9bb188971
   - enabled: 1
+    path: Assets/Stage1 explanation.unity
+    guid: 833985fe286c7da4f9f77eb733e870d9
+  - enabled: 1
     path: Assets/Stage1.unity
     guid: ddcbea2b40702304bac7a55cc9393e34
+  - enabled: 1
+    path: Assets/STAGE2 explanation.unity
+    guid: f5cabc8774c016440af71ea095bd7e1a
   - enabled: 1
     path: Assets/STAGE2.unity
     guid: 47f74a80a1574544aada4eef99992b75

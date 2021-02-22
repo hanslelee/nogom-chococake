@@ -8,7 +8,7 @@ public class SceneChangeToLobby : MonoBehaviour
     public void ToLobby()
     {
         //테스트
-        // PlayerPrefs.DeleteAll();
+         // PlayerPrefs.DeleteAll();
 
         SceneManager.LoadScene("LOBBY");
     }

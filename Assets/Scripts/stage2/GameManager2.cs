@@ -22,7 +22,9 @@ public class GameManager2 : MonoBehaviour
     void Awake()
     {
         if (instance == null)
+        {
             instance = this;
+        }
         else
         {
             Debug.LogWarning("씬에 두개 이상의 게임 매니저가 존재");
@@ -53,7 +55,11 @@ public class GameManager2 : MonoBehaviour
 
     void Start()
     {
-        
+        if(!PlayerPrefs.HasKey("FistTimeStage2"))
+        {
+            PlayerPrefs.SetInt("FistTimeStage2", 1);
+        }
+
     }
 
     void Update()
@@ -66,8 +72,5 @@ public class GameManager2 : MonoBehaviour
 
         if (n_needle >= goal_n && n_thread >= goal_t && n_fabric >= goal_f)
             OnGameSuccess();
-
-        if(isSuccess)
-        { }
     }
 }

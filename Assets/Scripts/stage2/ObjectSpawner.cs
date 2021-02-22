@@ -8,7 +8,7 @@ public class ObjectSpawner : MonoBehaviour
     public GameObject needlePrefab, b_needlePrefab, threadPrefab, b_threadPrefab, fabricPrefab, b_fabricPrefab, bombPrefab;
     public int count = 10;
 
-    public float timeBetSpawnMin = 0.25f, timeBetSpawnMax = 1f;  // 다음 배치까지 시간 간격 최소, 최대값
+    public float timeBetSpawnMin = 0f, timeBetSpawnMax = 0.5f;  // 다음 배치까지 시간 간격 최소, 최대값
     private float timeBetSpawn;                                     // 다음 배치까지의 시간 간격
 
     public float xMin = -8.5f, xMax = 8.5f;     // 배치할 위치의 최소, 최대 x값
@@ -16,7 +16,6 @@ public class ObjectSpawner : MonoBehaviour
 
     private GameObject[] fallingobjects;        // 프리팹으로부터 생성한 fallingobject를 저장할 배열 변수
     private int currIndex;                      // 현재 사용하고 있는 fallingobject의 index
-    private int lastIndex = 12;                 // prefab의 현재 사용 여부
 
     private Vector2 poolPosition = new Vector2(0, -30);     // 초반에 fallingobject를 모아둘 위치
     private float lastSpawnTime;                            // 마지막으로 배치했던 시간
@@ -42,7 +41,7 @@ public class ObjectSpawner : MonoBehaviour
     void Update()
     {
         // 게임 오버 상태에는 작동x
-        if (GameManager2.instance.isGameover)
+        if (GameManager2.instance.isGameover || GameManager2.instance.isSuccess)
             return;
 
         // 마지막 배치 시각에서 timeBetSpawn 이상 시간이 흘렀다면
@@ -54,9 +53,8 @@ public class ObjectSpawner : MonoBehaviour
             float xPos = Random.Range(xMin, xMax);
 
             currIndex = Random.Range(0, 10);
-            if (currIndex != lastIndex)
+            if ((fallingobjects[currIndex].transform.position.y < -7f) || (fallingobjects[currIndex].active == false))    // 가져오려는 인덱스의 오브젝트가 이미 화면밖으로 떨어진 오브젝트거나 노곰이 획득한 오브젝트일 때
             {
-                lastIndex = currIndex;
                 fallingobjects[currIndex].SetActive(false);
                 fallingobjects[currIndex].SetActive(true);
 

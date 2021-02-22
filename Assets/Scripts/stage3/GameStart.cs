@@ -9,10 +9,26 @@ public class GameStart : MonoBehaviour
     public GameObject explanationUI;
     public GameObject gameStartButtonUI;
 
+    int helpForTheFirstTime = 0;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (PlayerPrefs.HasKey("stage3Open"))
+        {
+            helpForTheFirstTime = PlayerPrefs.GetInt("stage3Open");
+        }
+        if (helpForTheFirstTime == 1)
+        {
+            // 이미 게임을 시작한 적이 있다면
+            explanationUI.SetActive(false);
+            gameStartButtonUI.SetActive(true);
+        }
+        else
+        {
+            helpForTheFirstTime = 1;
+            PlayerPrefs.SetInt("stage3Open", 1);
+        }
     }
 
    
