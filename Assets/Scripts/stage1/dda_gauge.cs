@@ -44,12 +44,13 @@ public class dda_gauge : MonoBehaviour
                 if (dda_bar.value == 1)
                 {
                     isGameover = true;
+                    //GM.onPlayerClean()
                 }
             }
         }
         if ((int)ms.Ms == 4 || (int)ms1.Ms == 4 || (int)ms2.Ms == 4 || (int)ms3.Ms == 4 || (int)ms4.Ms == 4 || (int)ms5.Ms == 4 || (int)ms6.Ms == 4 || (int)ms7.Ms == 4 || (int)ms8.Ms == 4)
         {
-            if(curHp > 0)
+            if(curHp > 0 && dda_bar.value < 1)
             {
                 curHp = dda_bar.value * maxHp - 0.2f;
                 HandleHp();

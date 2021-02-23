@@ -65,7 +65,7 @@ public class Hole : MonoBehaviour
             {
                 Catch_On();
             }
-        }*/
+        }*/ 
     }
 
     public void OnMouseDown()
