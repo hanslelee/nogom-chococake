@@ -33,14 +33,13 @@ public class Hole : MonoBehaviour
     void Start()
     {
         GM.G0();
-        this.audioSource = this.GetComponent<AudioSource>();
-       
+        audioSource = GetComponent<AudioSource>();
+        audioSource.clip = bubble;
+
         if (GM.Gs == GameState.Play)
         {
             Open_On();
         }
-
-       
     }
 
 
@@ -49,7 +48,6 @@ public class Hole : MonoBehaviour
     {
         if (GM.Gs == GameState.Play)
         {
-
             switch (Ms)
             {
                 case MoleState.Open:
@@ -62,6 +60,7 @@ public class Hole : MonoBehaviour
                     Close_ing();
                     break;
                 case MoleState.Catch:
+                    audioSource.Play();
                     Catch_ing();
                     break;
             }
@@ -153,10 +152,6 @@ public class Hole : MonoBehaviour
         {
             StartCoroutine("Wait");
         }
-
-        audioSource.clip = bubble;
-
-        audioSource.Play();
     }
 
     public IEnumerator Wait()

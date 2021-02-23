@@ -16,6 +16,7 @@ public class NogomController : MonoBehaviour
     public AudioClip successClip;
     public AudioClip jumpClip;
     public AudioClip eatingCoin;
+    public AudioClip hurtClip;
     public static int heartCount = 3;
     public static int currentScore=0;
 
@@ -141,7 +142,7 @@ public class NogomController : MonoBehaviour
             //오디오 클립을 죽는 걸로 변경
             nogomAudio.clip = successClip;
 
-            // 사망 효과음
+            // 성공 효과음
             nogomAudio.Play();
             bgm.Stop();
 
@@ -176,6 +177,12 @@ public class NogomController : MonoBehaviour
         {
             isHurt = true;
             hurtStart = Time.time;
+
+            //오디오 클립을 죽는 걸로 변경
+            nogomAudio.clip = hurtClip;
+
+            // 사망 효과음
+            nogomAudio.Play();
 
             redScreenOn = true;
             lastActiveTime = Time.time;

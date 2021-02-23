@@ -16,6 +16,14 @@ public class GameManager2 : MonoBehaviour
     public GameObject canvas;
     public GameObject toTheLobbySceneButton;
 
+    public AudioClip deathClip;
+    public AudioClip successClip;
+
+    private AudioSource nogomAudio;
+    private AudioSource bgm;
+
+
+
     public int n_needle = 0, n_thread = 0, n_fabric = 0;    // 바늘, 실, 천 개수 
     public int goal_n = 30, goal_t = 20, goal_f = 10;    // 바늘, 실, 천 개수 
 
@@ -31,17 +39,34 @@ public class GameManager2 : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
+    
     public void OnPlayerDead()
     {
+        //오디오 클립을 죽는 걸로 변경
+        nogomAudio.clip = deathClip;
+
+        // 사망 효과음
+        nogomAudio.Play();
+        bgm.Stop();
+
         isGameover = true;
         gameoverUI.SetActive(true);
     }
 
     public void OnGameSuccess()
     {
+        //오디오 클립을 성공 걸로 변경
+        nogomAudio.clip = successClip;
+
+        // 성공 효과음
+        nogomAudio.Play();
+        bgm.Stop();
+
+
         isSuccess = true;
+
         
+
         canvas.SetActive(false);
         succssImage.SetActive(true);
         toTheLobbySceneButton.SetActive(true);
@@ -60,6 +85,8 @@ public class GameManager2 : MonoBehaviour
             PlayerPrefs.SetInt("FistTimeStage2", 1);
         }
 
+        nogomAudio = GetComponent<AudioSource>();
+        bgm = GameObject.Find("Main Camera").GetComponent<AudioSource>();
     }
 
     void Update()

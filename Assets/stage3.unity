@@ -872,9 +872,10 @@ MonoBehaviour:
   background: {fileID: 0}
   successText: {fileID: 374711734}
   deathClip: {fileID: 8300000, guid: 7117753186f2de64e92edc1adc7ded53, type: 3}
-  successClip: {fileID: 8300000, guid: 5ba3a45ccda6f474a902ad7e3eb33e94, type: 3}
+  successClip: {fileID: 8300000, guid: 18e39158f4eff50428f4fbce2e57c0b8, type: 3}
   jumpClip: {fileID: 8300000, guid: 02a855e125cdf1e49ba5cbb84cb71aba, type: 3}
   eatingCoin: {fileID: 8300000, guid: 16f6ba62752f6f340a663ecd14475490, type: 3}
+  hurtClip: {fileID: 8300000, guid: 4d5f85572cb0fbf4c9f4a4318f3a41d4, type: 3}
 --- !u!82 &327067803
 AudioSource:
   m_ObjectHideFlags: 0
@@ -885,11 +886,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 6b719e69abdd97a4d864eb70dbadaeec, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 02a855e125cdf1e49ba5cbb84cb71aba, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.777
+  m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -2577,7 +2578,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1244215373}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 6b719e69abdd97a4d864eb70dbadaeec, type: 3}

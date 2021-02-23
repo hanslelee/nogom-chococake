@@ -26,6 +26,18 @@ public class Game_manager : MonoBehaviour
     public dda_gauge dg;
 
 
+    public AudioClip deathClip;
+    public AudioClip successClip;
+    
+    private AudioSource nogomAudio;
+    private AudioSource bgm;
+
+    void Start()
+    {
+        nogomAudio = GetComponent<AudioSource>();
+        bgm = GameObject.Find("Main Camera").GetComponent<AudioSource>();
+    }
+
     void Awake()
     {
         if (instance == null)
@@ -73,6 +85,13 @@ public class Game_manager : MonoBehaviour
 
     public void End()
     {
+        //오디오 클립을 성공 걸로 변경
+        nogomAudio.clip = deathClip;
+
+        // 성공 효과음
+        nogomAudio.Play();
+        bgm.Stop();
+
         Gs = GameState.End;
         gameoverUI.SetActive(true);
     }
@@ -80,6 +99,13 @@ public class Game_manager : MonoBehaviour
 
     public void Success()
     {
+        //오디오 클립을 성공 걸로 변경
+        nogomAudio.clip = successClip;
+
+        // 성공 효과음
+        nogomAudio.Play();
+        bgm.Stop();
+
         Gs = GameState.Ready;
         canvas.SetActive(false);
         successImage.SetActive(true);

@@ -17,6 +17,7 @@ public class nogomControllerStage2 : MonoBehaviour
     private bool isDead = false;            // 사망 상태
 
 
+
     public AudioClip ObjectClip, BombClip;
     [SerializeField] AudioSource playerAudio;
 
@@ -65,6 +66,8 @@ public class nogomControllerStage2 : MonoBehaviour
     {
         gameObject.SetActive(false);
         isDead = true;
+
+        
 
         GameManager2.instance.OnPlayerDead();
     }
