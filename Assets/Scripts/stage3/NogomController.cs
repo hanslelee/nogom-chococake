@@ -13,6 +13,7 @@ public class NogomController : MonoBehaviour
     public GameObject successText;
 
     public AudioClip deathClip;
+    public AudioClip successClip;
     public AudioClip jumpClip;
     public AudioClip eatingCoin;
     public static int heartCount = 3;
@@ -30,6 +31,7 @@ public class NogomController : MonoBehaviour
     private Animator animator;
     private Rigidbody2D nogomRigidbody;
     private AudioSource nogomAudio;
+    private AudioSource bgm;
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +41,7 @@ public class NogomController : MonoBehaviour
         nogomRigidbody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         nogomAudio = GetComponent<AudioSource>();
+        bgm = GameObject.Find("Main Camera").GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -125,11 +128,7 @@ public class NogomController : MonoBehaviour
         // 애니메이터의 die 트리거 파라미터
         animator.SetTrigger("Die");
 
-        //오디오 클립을 죽는 걸로 변경
-        nogomAudio.clip = deathClip;
-
-        // 사망 효과음
-        nogomAudio.Play();
+        
 
         // 속도를 없앰
         nogomRigidbody.velocity = Vector2.zero;
@@ -139,6 +138,13 @@ public class NogomController : MonoBehaviour
 
         if (currentScore >= 100)
         {
+            //오디오 클립을 죽는 걸로 변경
+            nogomAudio.clip = successClip;
+
+            // 사망 효과음
+            nogomAudio.Play();
+            bgm.Stop();
+
             Time.timeScale = 0;
 
             //게임 매니저의 게임 성공 처리 실행
@@ -147,6 +153,14 @@ public class NogomController : MonoBehaviour
         }
         else
         {
+            //오디오 클립을 죽는 걸로 변경
+            nogomAudio.clip = deathClip;
+
+            // 사망 효과음
+            bgm.Stop();
+            nogomAudio.Play();
+
+
             //게임 매니저의 게임오버 처리 실행
             GameManager3.instance.OnPlayerDead();
         }

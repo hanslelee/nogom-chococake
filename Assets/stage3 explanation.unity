@@ -647,7 +647,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uCF00\uC78C\uC744 \uC0AC \uBA39\uC744 \uB3C8\uC774 \uBAA8\uC790\uB77C\uC694.\n\uB178\uACF0\uC774\uB97C
+  m_Text: "\uCF00\uC774\uD06C\uB97C \uC0AC \uBA39\uC744 \uB3C8\uC774 \uBAA8\uC790\uB77C\uC694.\n\uB178\uACF0\uC774\uB97C
     \uC704\uD574 \uB3C8\uC744 \uBAA8\uC544\uC8FC\uC138\uC694"
 --- !u!222 &215670069
 CanvasRenderer:
@@ -1879,7 +1879,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "STAGE3. \n\uC90D\uC90D \uB178\uACF0"
+  m_Text: "STAGE 3. \n\uC90D\uC90D \uB178\uACF0"
 --- !u!222 &1235427173
 CanvasRenderer:
   m_ObjectHideFlags: 0

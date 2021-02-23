@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 //using UnityEngine.UI;
 
+
+
 public enum MoleState
 {
     None,
@@ -25,14 +27,20 @@ public class Hole : MonoBehaviour
     int Ani_Count; //몇 장의 애니메이션을 쓰는지
 
     public Game_manager GM;
+    public AudioClip bubble;
+    private AudioSource audioSource;
 
     void Start()
     {
         GM.G0();
+        this.audioSource = this.GetComponent<AudioSource>();
+       
         if (GM.Gs == GameState.Play)
         {
             Open_On();
         }
+
+       
     }
 
 
@@ -145,6 +153,10 @@ public class Hole : MonoBehaviour
         {
             StartCoroutine("Wait");
         }
+
+        audioSource.clip = bubble;
+
+        audioSource.Play();
     }
 
     public IEnumerator Wait()

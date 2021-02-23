@@ -80,7 +80,7 @@ public class Game_manager : MonoBehaviour
 
     public void Success()
     {
-        Gs = GameState.End;
+        Gs = GameState.Ready;
         canvas.SetActive(false);
         successImage.SetActive(true);
         toTheLobbyButton.SetActive(true);
