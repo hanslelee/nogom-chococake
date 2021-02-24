@@ -85,10 +85,10 @@ public class Game_manager : MonoBehaviour
 
     public void End()
     {
-        //오디오 클립을 성공 걸로 변경
+        //오디오 클립을 실패한 걸로 변경
         nogomAudio.clip = deathClip;
 
-        // 성공 효과음
+        // 실패 효과음
         nogomAudio.Play();
         bgm.Stop();
 
