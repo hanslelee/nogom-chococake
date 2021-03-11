@@ -21,6 +21,7 @@ public class Game_manager : MonoBehaviour
     public GameObject gameoverUI;
     public GameObject successImage;
     public GameObject toTheLobbyButton;
+    public GameObject failLobbyButton;
     public GameObject canvas;
 
     public dda_gauge dg;
@@ -73,6 +74,7 @@ public class Game_manager : MonoBehaviour
         else if(Gs == GameState.End){
                 if (Input.GetMouseButtonDown(0))
                 {
+                if (EventSystem.current && EventSystem.current.IsPointerOverGameObject() == false)
                     SceneManager.LoadScene(SceneManager.GetActiveScene().name);
                 }
         }
@@ -107,7 +109,6 @@ public class Game_manager : MonoBehaviour
         bgm.Stop();
 
         Gs = GameState.Ready;
-        canvas.SetActive(false);
         successImage.SetActive(true);
         toTheLobbyButton.SetActive(true);
         PlayerPrefs.SetInt("stage1Clear", 1);

@@ -118,7 +118,7 @@ public class NogomController : MonoBehaviour
 
         }
         */
-        if(currentScore >= 100)
+        if(currentScore >= 1000)
         {
             successText.SetActive(true);
         }
@@ -137,7 +137,7 @@ public class NogomController : MonoBehaviour
         //사망 상태를 true로 변경
         isDead = true;
 
-        if (currentScore >= 100)
+        if (currentScore >= 1000)
         {
             //오디오 클립을 죽는 걸로 변경
             nogomAudio.clip = successClip;

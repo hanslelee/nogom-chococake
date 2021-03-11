@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class GameManager2 : MonoBehaviour
 {
@@ -37,6 +38,8 @@ public class GameManager2 : MonoBehaviour
             Debug.LogWarning("씬에 두개 이상의 게임 매니저가 존재");
             Destroy(gameObject);
         }
+
+        Time.timeScale = 1;
     }
     
     public void OnPlayerDead()
@@ -61,12 +64,8 @@ public class GameManager2 : MonoBehaviour
         nogomAudio.Play();
         bgm.Stop();
 
-
         isSuccess = true;
 
-        
-
-        canvas.SetActive(false);
         succssImage.SetActive(true);
         toTheLobbySceneButton.SetActive(true);
         PlayerPrefs.SetInt("stage2Clear", 1);
@@ -92,8 +91,11 @@ public class GameManager2 : MonoBehaviour
     {
         if(isGameover && Input.GetMouseButtonDown(0))
         {
-           
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            if (EventSystem.current && EventSystem.current.IsPointerOverGameObject() == false)
+            {
+                Time.timeScale = 1;
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
         }
 
         if (n_needle >= goal_n && n_thread >= goal_t && n_fabric >= goal_f)

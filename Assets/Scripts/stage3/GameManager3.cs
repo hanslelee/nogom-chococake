@@ -35,6 +35,13 @@ public class GameManager3 : MonoBehaviour
             Debug.LogWarning("씬에 두 개 이상의 게임 매니저가 존재합니다!");
             Destroy(gameObject);
         }
+        Time.timeScale = 1;
+
+        NogomController.heartCount = 3;
+        NogomController.currentScore = 0;
+        PlatformSpawner.isfirst = true;
+        PlatformSpawner.lastSpawnTime = 0f;
+        PlatformSpawner.timeBetSpawn = 0f;
     }
 
     // Update is called once per frame
@@ -51,6 +58,7 @@ public class GameManager3 : MonoBehaviour
                 PlatformSpawner.isfirst = true;
                 PlatformSpawner.lastSpawnTime = 0f;
                 PlatformSpawner.timeBetSpawn = 0f;
+                Time.timeScale=1;
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
         }
@@ -80,10 +88,10 @@ public class GameManager3 : MonoBehaviour
     public void OnPlayerSuccess()
     {
         isSuccess = true;
-        canvas.SetActive(false);
         richNogomImage.SetActive(true);
         toTheEndSceneButton.SetActive(true);
     }
+
     public void toTheEndScene()
     {
         SceneManager.LoadScene("END");

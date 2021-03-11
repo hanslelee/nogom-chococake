@@ -49,9 +49,9 @@ public class nogomControllerStage2 : MonoBehaviour
             {
                 inputPosition = MainCamera.ScreenToWorldPoint(Input.mousePosition);     // 월드 좌표 중심으로 바꿔주기
 
-                if (inputPosition.x > 0)
+                if (inputPosition.x > 0 && gameObject.transform.position.x < MainCamera.orthographicSize * MainCamera.aspect - 0.9f)
                     xInput = 1.0f;
-                else if (inputPosition.x < 0)
+                else if (inputPosition.x < 0 && gameObject.transform.position.x > - (MainCamera.orthographicSize * MainCamera.aspect -0.9f))
                     xInput = -1.0f;
             }
         }
