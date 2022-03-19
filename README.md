@@ -1,6 +1,15 @@
 # 초코케이크가 먹고싶어!(Nogom's ChocoCake)
+Unity Based Indie Game Project
+<br>
+<br>
+
+# 🎠 Game Story
 한밤중, 노곰이는 로얄 베어 호텔의 황제 초코케이크가 먹고 싶어 잠에서 깨어났어요. 하지만 노곰이는 호텔에 가기엔 많은 것들이 부족한 상태에요.
 3개의 스테이지를 성공해 노곰이가 초코케이크를 먹을 수 있도록 도와주세요!
+In the middle of the night, Nogom woke up hungry for the Emperor Chocolate Cake of the Royal Bear Hotel. However, Nogom lacks many things to go to the hotel.
+Please help Nogom eat chocolate cake by successfully completing three stages!
+<br>
+<br>
 
 ## 💻 Technologies 
 * Unity
