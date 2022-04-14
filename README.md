@@ -33,8 +33,9 @@ Please help Nogom eat chocolate cake by successfully completing three stages!
 <br>
 
 ## 🎈Download
-[초코케이크가 먹고싶어 다운받으러 가기🐻](https://play.google.com/store/apps/details?id=com.HongGomz.I_want_to_eat_choco_cake&hl=ko&gl=US)
-![image](https://user-images.githubusercontent.com/51855129/158058082-3efcd51f-77e6-4c33-ab41-223b9d867f1e.png)
+[초코케이크가 먹고싶어 다운받으러 가기🐻](https://play.google.com/store/apps/details?id=com.HongGomz.I_want_to_eat_choco_cake)
+<br>
+<img width="1481" alt="image" src="https://user-images.githubusercontent.com/51855129/163381155-a7b3ffeb-953f-4c4d-8404-be4daa8b0ea2.png">
 <br>
 <br>
 
